@@ -11,10 +11,14 @@
   "license": "ISC",
   "devDependencies": {
     "@netlify/functions": "^1.4.0",
+    "@types/node": "^18.15.11",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
     "eslint": "^8.38.0",
     "prettier": "^2.8.7",
     "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@upstash/redis": "^1.20.2"
   }
 }

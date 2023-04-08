@@ -20,13 +20,13 @@ Please contact the TUfast-Team about this at frage@tu-fast.de",
     token: redisRestToken,
   })
   console.log("created redis connection")
-  const newCounter = await redis.incr("counter")
+  redis.incr("counter")
   console.log("incremented counter")
   return {
     statusCode: 200,
     body: JSON.stringify({
       message: "Hello, world!",
-      counter: newCounter,
+      // counter: newCounter,
     }),
   }
 }

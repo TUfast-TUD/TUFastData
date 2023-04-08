@@ -14,12 +14,14 @@ export const handler: Handler = async (
         "There was an error with the server configuration. \
 Please contact the TUfast-Team about this at frage@tu-fast.de",
     }
+  console.log("has env vars")
   const redis = new Redis({
     url: redisUrl,
     token: redisRestToken,
   })
-  redis.incr("counter")
-  const newCounter = await redis.get("counter")
+  console.log("created redis connection")
+  const newCounter = await redis.incr("counter")
+  console.log("incremented counter")
   return {
     statusCode: 200,
     body: JSON.stringify({

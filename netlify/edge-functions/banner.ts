@@ -12,22 +12,10 @@ export default async (req: Request) => {
     return new Response("", { status: 500 });
   }
 
-  if (
-    req.headers.get("access-control-request-headers")?.includes("x-api-token")
-  ) {
-    console.log("contains it, ", req.headers.get("origin"));
-    return new Response("", {
-      status: 200,
-      headers: {
-        "access-control-allow-methods": "POST",
-      },
-    });
-  }
-
   // return unauthorized of no api token in request
-  console.log("header is:", req.headers.get("X-Api-Token"));
+  console.log("header is:", req.headers.get("Authorization"));
   console.log("headers:", req.headers);
-  if (req.headers.get("x-api-token") !== apiToken) {
+  if (req.headers.get("Authorization") !== apiToken) {
     return new Response("", { status: 401 });
   }
 

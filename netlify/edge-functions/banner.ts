@@ -28,6 +28,6 @@ export default async (req: Request) => {
   } catch {
     return new Response("", { status: 500 });
   }
-  return new Response();
+  return new Response("", { status: 200 });
 };
 export const config = { path: "/api/banner" };

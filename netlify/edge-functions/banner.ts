@@ -14,6 +14,7 @@ export default async (req: Request) => {
 
   // return unauthorized of no api token in request
   console.log("header is:", req.headers.get("X-Api-Token"));
+  console.log("headers:", req.headers);
   if (req.headers.get("X-Api-Token") !== apiToken) {
     return new Response("", { status: 401 });
   }

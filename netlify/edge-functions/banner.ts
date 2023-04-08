@@ -15,6 +15,7 @@ export default async (req: Request) => {
   if (
     req.headers.get("access-control-request-headers")?.includes("x-api-token")
   ) {
+    console.log("contains it");
     return new Response("", { status: 200 });
   }
 
